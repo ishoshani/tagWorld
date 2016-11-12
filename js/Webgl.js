@@ -48,7 +48,7 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
-var geometry = new THREE.PlaneGeometry( 20, 20);
+var geometry = new THREE.PlaneGeometry( 10, 10);
 var material = new THREE.MeshBasicMaterial( {  map: vidtexture} );
 var cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
@@ -60,4 +60,12 @@ function render() {
 	cube.rotation.y += 0.01;
 	
 }
+
+var domEvents   = new THREEx.DomEvents(camera, renderer.domElement);
+
+domEvents.addEventListener(cube, 'click', function(event){
+    console.log('you clicked on the mesh')
+}, false);
+
+
 render();
