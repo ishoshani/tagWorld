@@ -78,16 +78,16 @@ window.ondeviceorientation = function(event){
 	var delta=[event.alpha-lastOrientation[0],event.beta-lastOrientation[1], event.gamma-lastOrientation[2]]
 	lastOrientation=[event.alpha, event.beta, event.gamma];
 	console.log(delta);
-	camera.rotation.x+=delta[1]/100;
-	camera.rotation.y+=delta[0]/100;
-	camera.rotation.z+=delta[2]/100;
+	camera.rotation.x+=delta[1]/180;
+	camera.rotation.y+=delta[0]/180;
+	camera.rotation.z+=delta[2]/180;
 
 }
 
 
 
 
-camera.position.z = 10;
+camera.position.z = 5;
 function render() {
 	requestAnimationFrame( render );
 	renderer.autoClear=false;
