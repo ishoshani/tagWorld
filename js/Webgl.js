@@ -91,6 +91,7 @@ function render() {
 	renderer.clear();
 	renderer.render(backscene, backCamera)
 	renderer.render( scene, camera );
+	tag1.rotation.y+=0.01;
 
 
 
