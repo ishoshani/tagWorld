@@ -15,9 +15,7 @@ var constraints = window.constraints = {
 
 
 function hasGetUserMedia() {
-  return !!(navigator.mediaDevices.getUserMedia 
-
-  	|| navigator.getUserMedia
+  return !!(navigator.getUserMedia
   	|| navigator.webkitGetUserMedia ||
             navigator.mozGetUserMedia || navigator.msGetUserMedia);
 }
