@@ -78,9 +78,9 @@ window.ondeviceorientation = function(event){
 	var delta=[event.alpha-lastOrientation[0],event.beta-lastOrientation[1], event.gamma-lastOrientation[2]]
 	lastOrientation=[event.alpha, event.beta, event.gamma];
 	console.log(delta);
-	camera.rotation.x+=delta[0];
-	camera.rotation.y+=delta[1];
-	camera.rotation.z+=delta[2];
+	camera.rotation.x+=delta[1]/100;
+	camera.rotation.y+=delta[0]/100;
+	camera.rotation.z+=delta[2]/100;
 
 }
 
