@@ -10,6 +10,7 @@ var initialized = false; //have we been orientated yet?
 
 Iurl1="large.jpg"
 Iurl2="einNopee.gif"
+Iurl3="groupPic.jpg"
 
 var constraints = window.constraints={
   audio: false,
@@ -95,17 +96,23 @@ backscene.add(backCamera);
 var raycaster = new THREE.Raycaster(); // create once
 var mouseVector = new THREE.Vector3() // create once
 
-function onMouseMove(e){
-	mouseVector.x = 2 * (e.clientX / renderer.domElement.clientWidth) - 1;
-	mouseVector.y = 1 - 2 * ( e.clientY / renderer.domElement.clientWidth );
-	raycaster.setFromCamera( mouseVector, camera );
-	var intersects = raycaster.intersectObjects( scene.children );
-	console.log(intersects);
+function onMouseTouch(e){
+	var div_wrapper = document.createElement('div');
+
+    div_wrapper.setAttribute('class', 'tag');
+
+    var tag_image = document.createElement('img');
+
+    tag_image.setAttribute('src', "resources/Iurl3");
+
+    tag_image.setAttribute('class', 'tag-image');
+
+     div_wrapper.appendChild(tag_image);
 }
 
 
 
-window.addEventListener( 'mousedown', onMouseMove, false );
+window.addEventListener( 'mouseTouch', onMouseMove, false );
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
@@ -127,16 +134,11 @@ background.material.depthWrite= false;
 backscene.add(background);
 
 //setup foreground objects
-var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
-var material1 = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
-var tag1 = new THREE.Mesh( geometry1, material1 );
-console.log(tag1);
+
+tag1=addTag(Iurl3);
 $(tag1).click(function(){	
 		console.log("clicked!")
 	});
-
-Iurl1="large.jpg"
-Iurl2="einNopee.gif"
 
 tagList[0]=AddTag("einNopee.gif");
 tagList[1]=AddTag("large.jpg");
