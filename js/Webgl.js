@@ -77,7 +77,6 @@ function AddTag(image){
 	$(tag).click(function(){	
 		console.log("clicked!")
 	});
-
 	return tag;	
 }
 
