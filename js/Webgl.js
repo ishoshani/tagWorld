@@ -55,7 +55,7 @@ else{
 	alert('getUserMedia() is not supported in your browser');
 }
 function AddSticker(image){
-	var texture = THREE.ImageUtils.loadTexture(image);
+	var texture = THREE.ImageUtils.loadTexture("resource/"+image);
 	var geometry = new THREE.PlaneGeometry(2,2);
 	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
