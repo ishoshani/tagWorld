@@ -21,12 +21,12 @@ function gotDevice(devices){
 		console.log(devices[i]);
 		if(devices[i]['kind']=='videoinput'){
 			console.log("found a videoinput");
-			Vinputs = devices[i]['deviceID'];
+			Vinputs += devices[i]['deviceID'];
 		}
 		}
 	constraints = window.constraints ={
 		audio:false,
-		video: {deviceID : Vinputs[Vinputs.length]}
+		video: {deviceID : Vinputs[Vinputs.length-1]}
 	};
 }
 
