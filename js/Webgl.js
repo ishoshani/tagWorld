@@ -77,14 +77,14 @@ function AddTag(image){
 //foreground and background scenes
 var scene = new THREE.Scene();
 var backscene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight-100, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 var backCamera= new THREE.Camera();
 backscene.add(backCamera);
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight);
-document.body.appendChild( renderer.domElement );
+renderer.setSize( window.innerWidth, window.innerHeight - 100);
+document.getElementById('stream-area').appendChild( renderer.domElement );
 
 //create video texture
 var vidtexture = new THREE.VideoTexture( video );
