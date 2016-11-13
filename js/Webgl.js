@@ -57,7 +57,7 @@ else{
 function AddSticker(image){
 	var texture = THREE.ImageUtils.loadTexture('resource/einNopee.gif');
 	var geometry = new THREE.PlaneGeometry(2,2);
-	var material = new THREE.MeshBasicMaterial( { color: image ,map: texture} );
+	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
 	tag.lookAt(camera.position);
 	return tag;
