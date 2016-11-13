@@ -88,6 +88,10 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 var backCamera= new THREE.Camera();
 backscene.add(backCamera);
 
+//Mouse functionanily
+var raycaster = new THREE.Raycaster(); // create once
+var mouseVector = new THREE.Vector3() // create once
+
 function onMouseMove(){
 	mouseVector.x = 2 * (e.clientX / containerWidth) - 1;
 	mouseVector.y = 1 - 2 * ( e.clientY / containerHeight );
@@ -96,9 +100,7 @@ function onMouseMove(){
 	console.log(intersects[0]);
 }
 
-//Mouse functionanily
-var raycaster = new THREE.Raycaster(); // create once
-var mouse = new THREE.Vector3() // create once
+
 
 window.addEventListener( 'mousedown', onMouseMove, false );
 
