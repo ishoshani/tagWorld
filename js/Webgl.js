@@ -102,7 +102,7 @@ function onMouseMove(e){
 	raycaster.setFromCamera( mouseVector, camera );
 	var intersects = raycaster.intersectObjects( scene.children );
 	console.log(intersects);
-	if(intersects.length==0){
+	if(intersects.length>0){
 	var id = intersects[0].object.id;
 	var Takenimage
 	if(id==10){
