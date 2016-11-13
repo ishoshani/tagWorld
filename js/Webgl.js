@@ -1,6 +1,7 @@
 'use strict';
 
 var video = document.getElementById("video");
+
 console.log(video);
 var errorCallback = function(e) {
     console.log('Reeeejected!', e);
@@ -53,10 +54,13 @@ if(hasGetUserMedia()){
 else{
 	alert('getUserMedia() is not supported in your browser');
 }
-function AddSticker(color){
-	var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-	var material = new THREE.MeshBasicMaterial( { color: color} );
+function AddSticker(image){
+	var texture =new THREE.Texture();
+	texture.image = new THREE.ImageLoader().load("resource/large.jpg");
+	var geometry = new THREE.PlaneGeometry(2,2);
+	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
+	tag.lookAt(camera.position);
 	return tag;
 	
 }
@@ -83,7 +87,7 @@ var background = new THREE.Mesh( backgeometry, backmaterial );
 background.material.depthTest= false;
 background.material.depthWrite= false;
 backscene.add(background);
-var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
+var geometry1 = new THREE.Geometry( 1, 1, 1 );
 var material1 = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
 var tag2 = AddSticker(0x00ff00);
@@ -119,7 +123,13 @@ function render() {
 	renderer.clear();
 	renderer.render(backscene, backCamera)
 	renderer.render( scene, camera );
-	tag1.rotation.y+=0.01;
+	tag1.lookAt(camera.position);
+	tag2.lookAt(camera.position);
+	tag3.lookAt(camera.position);
+	tag4.lookAt(camera.position);
+
+
+
 
 
 
