@@ -29,7 +29,7 @@ function gotDevice(devices){
 	console.log(Vinputs);
 	constraints = {
 		audio:false,
-		video:{}
+		video:{deviceId:Vinputs[1]}
 	};
 }
 //Check to see what inputs are avialable
@@ -82,8 +82,8 @@ backscene.add(backCamera);
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth+100, window.innerHeight+100 );
-document.body.appendChild( renderer.domElement );
+renderer.setSize( window.innerWidth, window.innerHeight - 100 );
+document.getElementById('stream-area').appendChild( renderer.domElement );
 
 //create video texture
 var vidtexture = new THREE.VideoTexture( video );
