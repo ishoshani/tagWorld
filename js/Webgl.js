@@ -102,7 +102,7 @@ scene.add( tag2) ;
 scene.add(tag3);
 scene.add(tag4);
 var pointLight = new THREE.PointLight(0xFFFFFF);
-scene.addLight(pointLight);
+scene.add(pointLight);
 var lastOrientation
 window.ondeviceorientation = function(event){
 	if(!initialized){
