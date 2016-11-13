@@ -8,8 +8,9 @@ var errorCallback = function(e) {
   };
 var initialized = false; //have we been orientated yet?
 
-var Iurl1="large.jpg"
-var Iurl2="einNopee.gif"
+var Iurl1="large.jpg";
+var Iurl2="einNopee.gif";
+var Iurl3="groupPic.jpg";
 
 var constraints = window.constraints={
   audio: false,
@@ -101,15 +102,57 @@ function onMouseMove(e){
 	raycaster.setFromCamera( mouseVector, camera );
 	var intersects = raycaster.intersectObjects( scene.children );
 	console.log(intersects);
-	var Takenimage = intersects[0].object.material.map.image.currentSrc;
+	if(intersects.length>0){
+	var id = intersects[0].object.id;
+	var Takenimage
+	if(id==10){
+		Takenimage="resource/"+Iurl3;
+	}
+	if(id==11){
+		Takenimage="resource/"+Iurl1
+	}
+	if(id==12||id==13){
+		Takenimage="resource/"+Iurl2
+
+	}
+	
 	console.log(Takenimage);
 	var img = document.getElementById("footTag1");
 	img.setAttribute('src', Takenimage);
+	}
+}
+function onTouch(e){
+	mouseVector.x = 2 * (e.touches[0].clientX / renderer.domElement.clientWidth) - 1;
+	mouseVector.y = 1 - 2 * ( e.touches[0].clientY / renderer.domElement.clientWidth );
+	raycaster.setFromCamera( mouseVector, camera );
+	var intersects = raycaster.intersectObjects( scene.children );
+	console.log(intersects);
+	if(intersects.length>0){
+	var id = intersects[0].object.id;
+	var Takenimage
+	if(id==10){
+		Takenimage="resource/"+Iurl3;
+	}
+	if(id==11){
+		Takenimage="resource/"+Iurl1
+	}
+	if(id==12||id==13){
+		Takenimage="resource/"+Iurl2
+
+	}
+	
+	console.log(Takenimage);
+	var img = document.getElementById("footTag1");
+	img.setAttribute('src', Takenimage);
+	 }
+
 }
 
 
 
 window.addEventListener( 'mousedown', onMouseMove, false );
+window.addEventListener('touchstart', onTouch, false);
+
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
@@ -131,20 +174,21 @@ background.material.depthWrite= false;
 backscene.add(background);
 
 //setup foreground objects
+var texture = THREE.ImageUtils.loadTexture("resource/"+Iurl3)
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+texture.repeat.set( 1, 1);
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
-var material1 = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
+var material1 = new THREE.MeshLambertMaterial( { map: texture } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
 console.log(tag1);
 $(tag1).click(function(){	
 		console.log("clicked!")
 	});
 
-Iurl1="large.jpg";
-Iurl2="einNopee.gif";
-
-tagList[0]=AddTag("einNopee.gif");
-tagList[1]=AddTag("large.jpg");
-tagList[2]=AddTag("large.jpg");
+tagList[0]=AddTag(Iurl1);
+tagList[1]=AddTag(Iurl2);
+tagList[2]=AddTag(Iurl2);
 
 //repositioning around central position
 tag1.position.z -= 5;
