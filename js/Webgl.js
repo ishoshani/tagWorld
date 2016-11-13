@@ -125,6 +125,7 @@ function onTouch(e){
 	raycaster.setFromCamera( mouseVector, camera );
 	var intersects = raycaster.intersectObjects( scene.children );
 	console.log(intersects);
+	if(intersects.length>0){
 	var id = intersects[0].object.id;
 	var Takenimage
 	if(id==10){
@@ -141,6 +142,7 @@ function onTouch(e){
 	console.log(Takenimage);
 	var img = document.getElementById("footTag1");
 	img.setAttribute('src', Takenimage);
+	 }
 
 }
 
