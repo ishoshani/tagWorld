@@ -97,7 +97,7 @@ function onMouseMove(e){
 	mouseVector.y = 1 - 2 * ( e.clientY / renderer.domElement.clientWidth );
 	raycaster.setFromCamera( mouseVector, camera );
 	var intersects = raycaster.intersectObjects( scene.children );
-	console.log(intersects[0]);
+	console.log(intersects);
 }
 
 
