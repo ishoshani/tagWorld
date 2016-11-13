@@ -112,7 +112,7 @@ function onMouseTouch(e){
 
 
 
-window.addEventListener( 'mouseTouch', onMouseMove, false );
+window.addEventListener( 'mouseTouch', onMouseTouch, false );
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
