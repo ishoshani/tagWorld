@@ -60,14 +60,14 @@ else{
 	alert('getUserMedia() is not supported in your browser');
 }
 
-//create a 2d plane tag. Image must be in resource folder. does not actuall add to scene.
+//create a 2d plane tag. Image must be in resource folder. does not actuall add to scene. Adds to a list of tags.
 function AddTag(image){
 	var texture = THREE.ImageUtils.loadTexture("resource/"+image);
 	var geometry = new THREE.PlaneGeometry(2,2);
 	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
 	tag.lookAt(camera.position);
-	return tag;
+	tagList+=tag;
 	
 }
 
@@ -102,9 +102,9 @@ backscene.add(background);
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
 var material1 = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
-tagList[0] = AddTag("einNopee.gif");
-tagList[1] = AddTag("large.jpg");
-tagList[2] = AddTag("large.jpg");
+AddTag("einNopee.gif");
+AddTag("large.jpg");
+AddTag("large.jpg");
 
 //repositioning around central position
 tag1.position.z -= 5;
