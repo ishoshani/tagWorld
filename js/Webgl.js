@@ -12,7 +12,24 @@ var constraints = window.constraints = {
   audio: false,
   video: true
 };
+var Vinputs = [];
 
+function gotDevice(devices){
+
+	for (var i = 0; i !== devices.length; ++i) {
+		console.log(devices[i]);
+		if(devices[i]['kind']=='videoinput'){
+			console.log("found a videoinput");
+			Vinputs = devices[i]['deviceID'];
+		}
+		}
+	constraints = window.constraints ={
+		audio:false,
+		video: {deviceID : Vinputs[Vinputs.length]}
+	};
+}
+
+navigator.mediaDevices.enumerateDevices().then(gotDevice).catch(errorCallback);
 
 function hasGetUserMedia() {
   return !!(navigator.getUserMedia
