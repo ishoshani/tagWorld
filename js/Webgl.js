@@ -55,10 +55,11 @@ else{
 	alert('getUserMedia() is not supported in your browser');
 }
 function AddSticker(image){
-	var texture =new THREE.Texture();
-	texture.image = new THREE.ImageLoader().load("resource/large.jpg");
+	var texture = THREE.ImageUtils.loadTexture('einNopee.gif', {}, function() {
+    renderer.render(scene);
+})
 	var geometry = new THREE.PlaneGeometry(2,2);
-	var material = new THREE.MeshBasicMaterial( { map: texture} );
+	var material = new THREE.MeshBasicMaterial( { color: image ,map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
 	tag.lookAt(camera.position);
 	return tag;
@@ -123,7 +124,6 @@ function render() {
 	renderer.clear();
 	renderer.render(backscene, backCamera)
 	renderer.render( scene, camera );
-	tag1.lookAt(camera.position);
 	tag2.lookAt(camera.position);
 	tag3.lookAt(camera.position);
 	tag4.lookAt(camera.position);
