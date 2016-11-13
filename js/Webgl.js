@@ -8,6 +8,9 @@ var errorCallback = function(e) {
   };
 var initialized = false; //have we been orientated yet?
 
+Iurl1="large.jpg"
+Iurl2="einNopee.gif"
+
 var constraints = window.constraints={
   audio: false,
   video: {facingMode:"environment"}
@@ -132,6 +135,8 @@ $(tag1).click(function(){
 		console.log("clicked!")
 	});
 
+Iurl1="large.jpg"
+Iurl2="einNopee.gif"
 
 tagList[0]=AddTag("einNopee.gif");
 tagList[1]=AddTag("large.jpg");
