@@ -58,7 +58,7 @@ var backCamera= new THREE.Camera();
 backscene.add(backCamera);
 var renderer = new THREE.WebGLRenderer();
 
-renderer.setSize( window.innerWidth, window.innerHeight );
+renderer.setSize( window.innerWidth+100, window.innerHeight+100 );
 document.body.appendChild( renderer.domElement );
 var backgeometry = new THREE.PlaneGeometry( 2, 2, 0);
 var backmaterial = new THREE.MeshBasicMaterial( {  map: vidtexture} );
@@ -81,7 +81,6 @@ window.ondeviceorientation = function(event){
 	console.log(delta);
 	camera.rotation.x+=delta[1]/180;
 	camera.rotation.y+=delta[0]/180;
-	camera.rotation.z+=delta[2]/180;
 }
 
 
