@@ -29,7 +29,7 @@ function gotDevice(devices){
 	console.log(Vinputs);
 	constraints = {
 		audio:false,
-		video:{deviceId:Vinputs[Vinputs.length-1]}
+		video:true
 	};
 }
 //Check to see what inputs are avialable
