@@ -35,3 +35,16 @@ $('#closeButton').click(function(){
     $('#popup').toggleClass('hidden');
     $('profile-symbol').toggleClass('hidden');
 });
+
+var o = document.getElementById('footTag2');
+
+o.onclick = function() {
+    console.log("bruh");
+    $('#popupTag').toggleClass('hidden');
+    $('profile-symbol').toggleClass('hidden');
+};
+
+$('#tagClose').click(function(){
+    $('#popupTag').toggleClass('hidden');
+    $('profile-symbol').toggleClass('hidden');
+});

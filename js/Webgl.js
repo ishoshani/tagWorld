@@ -93,7 +93,7 @@ backscene.add(backCamera);
 
 //Mouse functionanily
 var raycaster = new THREE.Raycaster(); // create once
-var mouseVector = new THREE.Vector3() // create once
+var mouseVector = new THREE.Vector3(); // create once
 
 function onMouseMove(e){
 	mouseVector.x = 2 * (e.clientX / renderer.domElement.clientWidth) - 1;
@@ -139,8 +139,8 @@ $(tag1).click(function(){
 		console.log("clicked!")
 	});
 
-Iurl1="large.jpg"
-Iurl2="einNopee.gif"
+Iurl1="large.jpg";
+Iurl2="einNopee.gif";
 
 tagList[0]=AddTag("einNopee.gif");
 tagList[1]=AddTag("large.jpg");

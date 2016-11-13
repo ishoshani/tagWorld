@@ -177,3 +177,26 @@ svg {
     width: 95%;
     margin: 0 auto;
 }
+
+.popupTag .headerWrapper {
+    justify-content: space-between;
+}
+
+.popupTag p {
+    text-align: center;
+    margin: auto;
+    font-size: 53px;
+}
+
+.popupTag img {
+    border-radius: 20px;
+    width: 84%;
+    margin: 5em
+}
+
+.popupTag .smallProfilePic {
+    height: 7em;
+    width: 7em;
+    border-radius: 50%;
+    margin: 2em;
+}
