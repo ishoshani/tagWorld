@@ -86,7 +86,7 @@ var background = new THREE.Mesh( backgeometry, backmaterial );
 background.material.depthTest= false;
 background.material.depthWrite= false;
 backscene.add(background);
-var geometry1 = new THREE.Geometry( 1, 1, 1 );
+var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
 var material1 = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
 var tag2 = AddSticker(0x00ff00);
@@ -124,6 +124,7 @@ function render() {
 	renderer.clear();
 	renderer.render(backscene, backCamera)
 	renderer.render( scene, camera );
+	tag1.rotation.y+=0.01
 	tag2.lookAt(camera.position);
 	tag3.lookAt(camera.position);
 	tag4.lookAt(camera.position);
