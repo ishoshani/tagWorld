@@ -165,7 +165,7 @@ window.ondeviceorientation = function(event){
 	}
 	var delta=[event.alpha-lastOrientation[0],event.beta-lastOrientation[1], event.gamma-lastOrientation[2]]
 	lastOrientation=[event.alpha, event.beta, event.gamma];
-	console.log(delta);
+	//console.log(delta);
 	camera.rotation.x+=delta[1]*3.14/180;
 	camera.rotation.y+=delta[0]*3.14/180;
 };
