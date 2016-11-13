@@ -55,9 +55,7 @@ else{
 	alert('getUserMedia() is not supported in your browser');
 }
 function AddSticker(image){
-	var texture = THREE.ImageUtils.loadTexture('resource/einNopee.gif', {}, function() {
-    renderer.render(scene);
-})
+	var texture = THREE.ImageUtils.loadTexture('resource/einNopee.gif');
 	var geometry = new THREE.PlaneGeometry(2,2);
 	var material = new THREE.MeshBasicMaterial( { color: image ,map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
