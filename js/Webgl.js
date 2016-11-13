@@ -147,7 +147,7 @@ backscene.add(background);
 var texture = THREE.ImageUtils.loadTexture("resource/"+Iurl3)
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
-texture.repeat.set( 4, 4 );
+texture.repeat.set( 1, 1);
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
 var material1 = new THREE.MeshLambertMaterial( { map: texture } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
