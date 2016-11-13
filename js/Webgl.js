@@ -8,9 +8,9 @@ var errorCallback = function(e) {
   };
 var initialized = false; //have we been orientated yet?
 
-var constraints = {
+var constraints = window.constraints={
   audio: false,
-  video: {}
+  video: true,
 };
 var tagList = [];
 //list of Video Inputs
@@ -29,7 +29,7 @@ function gotDevice(devices){
 	console.log(Vinputs);
 	constraints = {
 		audio:false,
-		video:{deviceId:{exact: Vinputs[Vinputs.length-1]}}
+		video:{deviceId:Vinputs[Vinputs.length-1]}
 	};
 }
 //Check to see what inputs are avialable
