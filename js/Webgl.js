@@ -67,7 +67,7 @@ function AddTag(image){
 	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
 	tag.lookAt(camera.position);
-	tagList+=tag;
+	tagList.append(tag);
 	
 }
 
