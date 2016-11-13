@@ -88,6 +88,19 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 var backCamera= new THREE.Camera();
 backscene.add(backCamera);
 
+function onMouseMove(){
+	mouseVector.x = 2 * (e.clientX / containerWidth) - 1;
+	mouseVector.y = 1 - 2 * ( e.clientY / containerHeight );
+	var raycaster = projector.pickingRay( mouseVector.clone(), camera );
+	var intersects = raycaster.intersectObjects( scene.children );
+	console.log(intersects[0]);
+}
+
+//Mouse functionanily
+projector = new THREE.Projector();
+mouseVector = new THREE.Vector3();
+window.addEventListener( 'mouseDown', onMouseMove, false );
+
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight - 100 );
@@ -111,7 +124,7 @@ backscene.add(background);
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
 var material1 = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
-
+console.log(tag1);
 $(tag1).click(function(){	
 		console.log("clicked!")
 	});
