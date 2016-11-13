@@ -29,7 +29,7 @@ function gotDevice(devices){
 		
 	constraints = {
 		audio:false,
-		video:camera.Camera_Rear
+		video:{deviceID:f2fd6ce5e1b2e3671b65ff53cde0403a448cdfeb8d4ff5a33461dcdf60be3a6c}
 	};
 }
 //Check to see what inputs are avialable
