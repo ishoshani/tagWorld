@@ -144,7 +144,7 @@ background.material.depthWrite= false;
 backscene.add(background);
 
 //setup foreground objects
-var texture = THREE.ImageUtils.loadTexture("resource/"+image)
+var texture = THREE.ImageUtils.loadTexture("resource/"+Iurl3)
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set( 4, 4 );
