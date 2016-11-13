@@ -97,8 +97,9 @@ function onMouseMove(){
 }
 
 //Mouse functionanily
-projector = new THREE.Projector();
-mouseVector = new THREE.Vector3();
+var raycaster = new THREE.Raycaster(); // create once
+var mouse = new THREE.Vector3() // create once
+
 window.addEventListener( 'mousedown', onMouseMove, false );
 
 //set up rendere
