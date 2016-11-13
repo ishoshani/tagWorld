@@ -103,7 +103,8 @@ function onMouseMove(e){
 	console.log(intersects);
 	var Takenimage = intersects[0].object.material.map.image.currentSrc;
 	console.log(Takenimage);
-	
+	var img = document.getElementById("footTag1");
+	img.setAttribute('src', Takenimage);
 }
 
 
