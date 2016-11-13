@@ -99,7 +99,7 @@ function onMouseMove(){
 //Mouse functionanily
 projector = new THREE.Projector();
 mouseVector = new THREE.Vector3();
-window.addEventListener( 'mouseDown', onMouseMove, false );
+window.addEventListener( 'mousedown', onMouseMove, false );
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
