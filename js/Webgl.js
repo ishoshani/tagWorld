@@ -93,8 +93,8 @@ var raycaster = new THREE.Raycaster(); // create once
 var mouseVector = new THREE.Vector3() // create once
 
 function onMouseMove(e){
-	mouseVector.x = 2 * (e.clientX / containerWidth) - 1;
-	mouseVector.y = 1 - 2 * ( e.clientY / containerHeight );
+	mouseVector.x = 2 * (e.clientX / renderer.domElement.clientWidth) - 1;
+	mouseVector.y = 1 - 2 * ( e.clientY / renderer.domElement.clientWidth );
 	var raycaster = projector.pickingRay( mouseVector.clone(), camera );
 	var intersects = raycaster.intersectObjects( scene.children );
 	console.log(intersects[0]);
