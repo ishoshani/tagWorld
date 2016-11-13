@@ -8,8 +8,8 @@ var errorCallback = function(e) {
   };
 var initialized = false; //have we been orientated yet?
 
-Iurl1="large.jpg"
-Iurl2="einNopee.gif"
+var Iurl1="large.jpg"
+var Iurl2="einNopee.gif"
 
 var constraints = window.constraints={
   audio: false,
