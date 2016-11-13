@@ -18,17 +18,17 @@ var Vinputs = [];
 //if managed to get list of devices, try to find the videoinput and choose the final one:hopefully rearcam
 function gotDevice(devices){
 
-	/*for (var i = 0; i !== devices.length; ++i) {
+	for (var i = 0; i !== devices.length; ++i) {
 		console.log(devices[i]);
 		if(devices[i]['kind']=='videoinput'){
 			console.log("found a videoinput");
 			Vinputs.push(devices[i]['deviceID']);
 
 		}
-		*/
+		
 	constraints = {
 		audio:false,
-		video:true,
+		video:camera.Camera_Rear,
 	};
 }
 //Check to see what inputs are avialable
