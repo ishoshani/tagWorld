@@ -101,6 +101,8 @@ function onMouseMove(e){
 	raycaster.setFromCamera( mouseVector, camera );
 	var intersects = raycaster.intersectObjects( scene.children );
 	console.log(intersects);
+	var Takenimage = intersects[0].object.material.map.image.currentSrc;
+	consol.log(Takenimage);
 }
 
 
