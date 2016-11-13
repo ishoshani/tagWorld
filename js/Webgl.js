@@ -37,7 +37,7 @@ else{
 	alert('getUserMedia() is not supported in your browser');
 }
 function AddSticker(color){
-	var geometry = new THREE.PlaneGeometry( 1, 1 );
+	var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 	var material = new THREE.MeshBasicMaterial( { color: color} );
 	var tag = new THREE.Mesh( geometry, material );
 	return tag;
@@ -69,7 +69,18 @@ backscene.add(background);
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
 var material1 = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
+var tag2 = AddSticker(0x00ff00);
+var tag3 = AddSticker(0x0BB000);
+var tag4 = AddSticker(0xAFFA10);
+tag1.position.z -= 5;
+tag2.position.x -=5;
+tag3.position.z +=10;
+tag4.position.y +=5;
+
 scene.add( tag1 );
+scene.add( tag2) ;
+scene.add(tag3);
+scene.add(tag4);
 var lastOrientation
 window.ondeviceorientation = function(event){
 	if(!initialized){
@@ -84,7 +95,7 @@ window.ondeviceorientation = function(event){
 }
 
 
-camera.position.z = 5;
+camera.position.z = 0;
 function render() {
 	requestAnimationFrame( render );
 	renderer.autoClear=false;
