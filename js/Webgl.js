@@ -8,8 +8,9 @@ var errorCallback = function(e) {
   };
 var initialized = false; //have we been orientated yet?
 
-var Iurl1="large.jpg"
-var Iurl2="einNopee.gif"
+var Iurl1="large.jpg";
+var Iurl2="einNopee.gif";
+var Iurl3="groupPic.jpg";
 
 var constraints = window.constraints={
   audio: false,
@@ -101,7 +102,19 @@ function onMouseMove(e){
 	raycaster.setFromCamera( mouseVector, camera );
 	var intersects = raycaster.intersectObjects( scene.children );
 	console.log(intersects);
-	var Takenimage = intersects[0].object.material.map.image.currentSrc;
+	var id = intersects[0].object.id;
+	var Takenimage
+	if(id==10){
+		Takenimage="resource/"+Iurl3;
+	}
+	if(id==11){
+		Takenimage="resource/"+Iurl1
+	}
+	if(id==12||id==13){
+		Takenimage="resource/"+Iurl3
+
+	}
+	
 	console.log(Takenimage);
 	var img = document.getElementById("footTag1");
 	img.setAttribute('src', Takenimage);
@@ -131,8 +144,12 @@ background.material.depthWrite= false;
 backscene.add(background);
 
 //setup foreground objects
+var texture = THREE.ImageUtils.loadTexture("resource/"+image)
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+texture.repeat.set( 4, 4 );
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
-var material1 = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
+var material1 = new THREE.MeshLambertMaterial( { map: texture } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
 console.log(tag1);
 $(tag1).click(function(){	
