@@ -103,7 +103,7 @@ function onMouseTouch(e){
 
     var tag_image = document.createElement('img');
 
-    tag_image.setAttribute('src', "resources/"+Iurl3");
+    tag_image.setAttribute('src', "resources/"+Iurl3);
 
     tag_image.setAttribute('class', 'tag-image');
 
