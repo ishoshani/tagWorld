@@ -83,7 +83,7 @@ backscene.add(backCamera);
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight - 100);
+renderer.setSize( window.innerWidth, window.innerHeight - 100 );
 document.getElementById('stream-area').appendChild( renderer.domElement );
 
 //create video texture
