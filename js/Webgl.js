@@ -119,10 +119,36 @@ function onMouseMove(e){
 	var img = document.getElementById("footTag1");
 	img.setAttribute('src', Takenimage);
 }
+function onTouch(e){
+	mouseVector.x = 2 * (e.touches[0].clientX / renderer.domElement.clientWidth) - 1;
+	mouseVector.y = 1 - 2 * ( e.touches[0].clientY / renderer.domElement.clientWidth );
+	raycaster.setFromCamera( mouseVector, camera );
+	var intersects = raycaster.intersectObjects( scene.children );
+	console.log(intersects);
+	var id = intersects[0].object.id;
+	var Takenimage
+	if(id==10){
+		Takenimage="resource/"+Iurl3;
+	}
+	if(id==11){
+		Takenimage="resource/"+Iurl1
+	}
+	if(id==12||id==13){
+		Takenimage="resource/"+Iurl2
+
+	}
+	
+	console.log(Takenimage);
+	var img = document.getElementById("footTag1");
+	img.setAttribute('src', Takenimage);
+
+}
 
 
 
 window.addEventListener( 'mousedown', onMouseMove, false );
+window.addEventListener('touchstart', onTouch, false);
+
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
