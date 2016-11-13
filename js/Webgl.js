@@ -159,7 +159,7 @@ function render() {
 	renderer.render( scene, camera );
 	tag1.rotation.y+=0.01; //show off 3d object
 	tag1.materials[0].transperent= true;
-	tag1.materials[0].opacity -=
+	tag1.materials[0].opacity -= 0.001;
 	for (var i = tagList.length - 1; i >= 0; i--) {
 		tagList[i].lookAt(camera.position);
 	}
