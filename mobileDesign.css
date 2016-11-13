@@ -8,6 +8,8 @@ body {
     justify-content: flex-start;
     align-content: center;
     min-height:100%;
+    font-family: 'Rubik', sans-serif;
+    color: #615f5f;
 }
 
 html, body {
@@ -161,7 +163,6 @@ svg {
 }
 
 .headerWrapper h2 {
-    font-family: 'Rubik', sans-serif;
     width: 100%;
     text-align: center;
     font-size: 5em;
@@ -169,6 +170,24 @@ svg {
 }
 
 .close {
+    height: 4em;
     width: 3em;
     align-self: flex-start;
+}
+
+.number {
+    text-align: center;
+    margin-top: -30px;
+    font-size: 100px;
+}
+
+.stars {
+    height: 192px;
+    fill: #ffecb5;
+    width: 100%;
+}
+
+.starWrapper {
+    width: 95%;
+    margin: 0 auto;
 }
