@@ -55,7 +55,7 @@ else{
 	alert('getUserMedia() is not supported in your browser');
 }
 function AddSticker(image){
-	var texture = THREE.ImageUtils.loadTexture('resource/einNopee.gif');
+	var texture = THREE.ImageUtils.loadTexture(image);
 	var geometry = new THREE.PlaneGeometry(2,2);
 	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
@@ -89,9 +89,9 @@ backscene.add(background);
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
 var material1 = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
-var tag2 = AddSticker(0x00ff00);
-var tag3 = AddSticker(0x0BB000);
-var tag4 = AddSticker(0xAFFA10);
+var tag2 = AddSticker("einNopee.gif");
+var tag3 = AddSticker("large.jpg");
+var tag4 = AddSticker("large.jpg");
 tag1.position.z -= 5;
 tag2.position.x -=5;
 tag3.position.z +=10;
