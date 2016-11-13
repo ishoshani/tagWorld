@@ -10,31 +10,31 @@ var initialized = false; //have we been orientated yet?
 
 var constraints = window.constraints = {
   audio: false,
-  video: { facingMode: {exact : "environment"}}
+  video: {}
 };
 var tagList = [];
 //list of Video Inputs
 var Vinputs = [];
 //if managed to get list of devices, try to find the videoinput and choose the final one:hopefully rearcam
-/*function gotDevice(devices){
+function gotDevice(devices){
 
 	for (var i = 0; i !== devices.length; ++i) {
 		console.log(devices[i]);
 		if(devices[i]['kind']=='videoinput'){
 			console.log("found a videoinput");
-			Vinputs.push(devices[i]['deviceID']);
+			Vinputs.push(devices[i].deviceId);
 
 		}
 	}
-		
+	console.log(Vinputs);
 	constraints = {
 		audio:false,
-		video:{deviceID:f2fd6ce5e1b2e3671b65ff53cde0403a448cdfeb8d4ff5a33461dcdf60be3a6c}
+		video:{}
 	};
 }
 //Check to see what inputs are avialable
 navigator.mediaDevices.enumerateDevices().then(gotDevice).catch(errorCallback);
-*/
+
 
 //test various use media prefixes
 function hasGetUserMedia() {
