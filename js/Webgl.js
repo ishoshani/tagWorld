@@ -8,9 +8,9 @@ var errorCallback = function(e) {
   };
 var initialized = false; //have we been orientated yet?
 
-Iurl1="large.jpg"
-Iurl2="einNopee.gif"
-Iurl3="groupPic.jpg"
+var Iurl1="large.jpg"
+var Iurl2="einNopee.gif"
+var Iurl3="groupPic.jpg"
 
 var constraints = window.constraints={
   audio: false,
@@ -103,7 +103,7 @@ function onMouseTouch(e){
 
     var tag_image = document.createElement('img');
 
-    tag_image.setAttribute('src', "resources/Iurl3");
+    tag_image.setAttribute('src', "resources/"+Iurl3");
 
     tag_image.setAttribute('class', 'tag-image');
 
