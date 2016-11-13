@@ -74,6 +74,10 @@ function AddTag(image){
 	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
 	tag.lookAt(camera.position);
+	$(tag).click(function(){	
+		console.log("clicked!")
+	});
+
 	return tag;	
 }
 
@@ -106,8 +110,14 @@ backscene.add(background);
 
 //setup foreground objects
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
-var material1 = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
+var material1 = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
+
+$(tag1).click(function(){	
+		console.log("clicked!")
+	});
+
+
 tagList[0]=AddTag("einNopee.gif");
 tagList[1]=AddTag("large.jpg");
 tagList[2]=AddTag("large.jpg");
@@ -149,6 +159,8 @@ function render() {
 	renderer.render(backscene, backCamera);
 	renderer.render( scene, camera );
 	tag1.rotation.y+=0.01; //show off 3d object
+	tag1.materials[0].transperent= true;
+	tag1.materials[0].opacity -=
 	for (var i = tagList.length - 1; i >= 0; i--) {
 		tagList[i].lookAt(camera.position);
 	}
