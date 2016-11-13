@@ -125,7 +125,7 @@ for (var i = tagList.length - 1; i >= 0; i--) {
 //Images need light to show up correctly
 var pointLight = new THREE.PointLight(0xFFFFFF);
 scene.add(pointLight);
-var lastOrientation
+var lastOrientation;
 //move camera as device moves
 window.ondeviceorientation = function(event){
 	if(!initialized){//means the device will orientate to the first thing after it has first moved.
@@ -137,7 +137,7 @@ window.ondeviceorientation = function(event){
 	console.log(delta);
 	camera.rotation.x+=delta[1]*3.14/180;
 	camera.rotation.y+=delta[0]*3.14/180;
-}
+};
 
 //set camera to be at center
 camera.position.z = 0;
@@ -146,19 +146,12 @@ function render() {
 	requestAnimationFrame( render );
 	renderer.autoClear=false;//do not autoclear after render so that the back and fore live together
 	renderer.clear();
-	renderer.render(backscene, backCamera)
+	renderer.render(backscene, backCamera);
 	renderer.render( scene, camera );
-	tag1.rotation.y+=0.01 //show off 3d object
+	tag1.rotation.y+=0.01; //show off 3d object
 	for (var i = tagList.length - 1; i >= 0; i--) {
 		tagList[i].lookAt(camera.position);
 	}
-
-
-
-
-
-
-	
 }
 
 //start rendering.
