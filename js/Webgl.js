@@ -25,10 +25,11 @@ function gotDevice(devices){
 			Vinputs.push(devices[i]['deviceID']);
 
 		}
+	}
 		
 	constraints = {
 		audio:false,
-		video:camera.Camera_Rear,
+		video:camera.Camera_Rear
 	};
 }
 //Check to see what inputs are avialable
