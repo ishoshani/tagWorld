@@ -10,7 +10,7 @@ var initialized = false; //have we been orientated yet?
 
 var constraints = window.constraints = {
   audio: false,
-  video: { facingMode: "environment"}
+  video: { facingMode: {exact : "environment"}}
 };
 var tagList = [];
 //list of Video Inputs
