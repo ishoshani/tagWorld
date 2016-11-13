@@ -74,6 +74,9 @@ function AddTag(image){
 	var material = new THREE.MeshBasicMaterial( { map: texture} );
 	var tag = new THREE.Mesh( geometry, material );
 	tag.lookAt(camera.position);
+	$(tag).click(function(){	
+		console.log("clicked!")
+	});
 	return tag;	
 }
 
@@ -84,6 +87,22 @@ var backscene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 var backCamera= new THREE.Camera();
 backscene.add(backCamera);
+
+//Mouse functionanily
+var raycaster = new THREE.Raycaster(); // create once
+var mouseVector = new THREE.Vector3() // create once
+
+function onMouseMove(e){
+	mouseVector.x = 2 * (e.clientX / renderer.domElement.clientWidth) - 1;
+	mouseVector.y = 1 - 2 * ( e.clientY / renderer.domElement.clientWidth );
+	raycaster.setFromCamera( mouseVector, camera );
+	var intersects = raycaster.intersectObjects( scene.children );
+	console.log(intersects);
+}
+
+
+
+window.addEventListener( 'mousedown', onMouseMove, false );
 
 //set up rendere
 var renderer = new THREE.WebGLRenderer();
@@ -106,8 +125,14 @@ backscene.add(background);
 
 //setup foreground objects
 var geometry1 = new THREE.BoxGeometry( 1, 1, 1 );
-var material1 = new THREE.MeshNormalMaterial( { color: 0x00ff00 } );
+var material1 = new THREE.MeshLambertMaterial( { color: 0x00ff00 } );
 var tag1 = new THREE.Mesh( geometry1, material1 );
+console.log(tag1);
+$(tag1).click(function(){	
+		console.log("clicked!")
+	});
+
+
 tagList[0]=AddTag("einNopee.gif");
 tagList[1]=AddTag("large.jpg");
 tagList[2]=AddTag("large.jpg");
@@ -122,6 +147,7 @@ scene.add( tag1 );
 for (var i = tagList.length - 1; i >= 0; i--) {
 	scene.add(tagList[i]);
 }
+console.log(scene.children);
 //Images need light to show up correctly
 var pointLight = new THREE.PointLight(0xFFFFFF);
 scene.add(pointLight);
@@ -149,6 +175,7 @@ function render() {
 	renderer.render(backscene, backCamera);
 	renderer.render( scene, camera );
 	tag1.rotation.y+=0.01; //show off 3d object
+
 	for (var i = tagList.length - 1; i >= 0; i--) {
 		tagList[i].lookAt(camera.position);
 	}
