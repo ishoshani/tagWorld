@@ -111,7 +111,7 @@ function onMouseMove(e){
 		Takenimage="resource/"+Iurl1
 	}
 	if(id==12||id==13){
-		Takenimage="resource/"+Iurl3
+		Takenimage="resource/"+Iurl2
 
 	}
 	
@@ -156,12 +156,9 @@ $(tag1).click(function(){
 		console.log("clicked!")
 	});
 
-Iurl1="large.jpg"
-Iurl2="einNopee.gif"
-
-tagList[0]=AddTag("einNopee.gif");
-tagList[1]=AddTag("large.jpg");
-tagList[2]=AddTag("large.jpg");
+tagList[0]=AddTag(Iurl1);
+tagList[1]=AddTag(Iurl2);
+tagList[2]=AddTag(Iurl2);
 
 //repositioning around central position
 tag1.position.z -= 5;
