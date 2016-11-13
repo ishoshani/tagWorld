@@ -11,6 +11,8 @@
 
         var tag_image = document.createElement('img');
 
+        tag_image.setAttribute('id', 'footTag'+i);
+
         tag_image.setAttribute('src', tag_array[i]);
 
         tag_image.setAttribute('class', 'tag-image');
