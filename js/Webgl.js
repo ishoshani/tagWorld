@@ -135,7 +135,7 @@ backscene.add(background);
 
 //setup foreground objects
 
-tag1=AddTag(Iurl3);
+var tag1=AddTag(Iurl3);
 $(tag1).click(function(){	
 		console.log("clicked!")
 	});
