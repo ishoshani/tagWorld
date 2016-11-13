@@ -22,8 +22,8 @@ function gotDevice(devices){
 		console.log(devices[i]);
 		if(devices[i]['kind']=='videoinput'){
 			console.log("found a videoinput");
-			Vinputs += devices[i]['deviceID'];
-			console.log(Vinputs);
+			Vinputs.push( devices[i]['deviceID']);
+
 		}
 		}
 	constraints = window.constraints ={
