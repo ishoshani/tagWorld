@@ -147,6 +147,7 @@ scene.add( tag1 );
 for (var i = tagList.length - 1; i >= 0; i--) {
 	scene.add(tagList[i]);
 }
+console.log(scene.children);
 //Images need light to show up correctly
 var pointLight = new THREE.PointLight(0xFFFFFF);
 scene.add(pointLight);
