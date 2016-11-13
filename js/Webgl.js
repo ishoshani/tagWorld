@@ -23,11 +23,12 @@ function gotDevice(devices){
 		if(devices[i]['kind']=='videoinput'){
 			console.log("found a videoinput");
 			Vinputs += devices[i]['deviceID'];
+			console.log(Vinputs);
 		}
 		}
 	constraints = window.constraints ={
 		audio:false,
-		video: {deviceID : Vinputs[Vinputs.length-1]}
+		video: {deviceID : Vinputs[0]}
 	};
 }
 //Check to see what inputs are avialable
