@@ -16,10 +16,30 @@
 
                 <div id="profile-symbol">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.76 63.14"><defs></defs><title>Icon1</title><g id="Layer_3" data-name="Layer 3">
+                    <svg id="parent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.76 63.14"><defs></defs><title>Icon1</title><g id="Layer_3" data-name="Layer 3">
                     <path class="cls-1" d="M33.19,31a16.34,16.34,0,1,0-14.73-.23C7.81,33.37,0,41.66,0,51.51a18.43,18.43,0,0,0,.27,3.12c5.87,5.17,15.15,8.52,25.61,8.52,9.78,0,18.53-2.93,24.42-7.54a18.41,18.41,0,0,0,.47-4.1C50.76,41.94,43.39,33.84,33.19,31Z"/>
                 </g>
                 </svg>
+
+					<div id="popup" class="hidden popupHeader">
+						<section class="headerWrapper">
+                				<!--<img class="profilePic" src="http://i.imgur.com/y5jjMX5.jpg">-->
+            	    			<h2>Bub Cat</h2>
+								<svg id="closeButton" class="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+									<path d="M17.459,16.014l8.239-8.194c0.395-0.391,0.395-1.024,0-1.414c-0.394-0.391-1.034-0.391-1.428,0  l-8.232,8.187L7.73,6.284c-0.394-0.395-1.034-0.395-1.428,0c-0.394,0.396-0.394,1.037,0,1.432l8.302,8.303l-8.332,8.286  c-0.394,0.391-0.394,1.024,0,1.414c0.394,0.391,1.034,0.391,1.428,0l8.325-8.279l8.275,8.276c0.394,0.395,1.034,0.395,1.428,0  c0.394-0.396,0.394-1.037,0-1.432L17.459,16.014z" fill="#121313" id="Close"/>
+								</svg>
+        				</section>
+
+        				<article  class="profileBody">
+            				<img src="http://i.imgur.com/y5jjMX5.jpg">
+            				<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+            	    			nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+        	        			Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+    	        			</p>
+        				</article>
+					</div>
 
                 </div>
 
@@ -37,6 +57,7 @@
 
         <video id="video" autoplay style="display: none"></video>
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/mobileDesign.js"></script>
     <script src="lib/three.min.js"></script>
     <script src="js/Webgl.js"></script>

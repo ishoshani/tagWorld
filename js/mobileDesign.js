@@ -21,3 +21,15 @@
     document.getElementById('tag-area').appendChild(div_wrapper);
 
 })();
+
+var e = document.getElementById('parent');
+
+e.onclick = function() {
+    $('#popup').toggleClass('hidden');
+    $('profile-symbol').toggleClass('hidden');
+};
+
+$('#closeButton').click(function(){
+    $('#popup').toggleClass('hidden');
+    $('profile-symbol').toggleClass('hidden');
+});
